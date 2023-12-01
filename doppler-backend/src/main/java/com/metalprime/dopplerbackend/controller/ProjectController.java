@@ -20,9 +20,25 @@ public class ProjectController {
         return "New Project is added";
     }
 
+    @PostMapping("/edit")
+    public String update(@RequestBody Project project, @RequestParam int id){
+        projectService.editProject(project, id);
+        return "Update Project is added";
+    }
+
     @GetMapping("/getAll")
     public List<Project> list(){
         return projectService.getAllProjects();
+    }
+
+    @GetMapping("/getById")
+    public Project getProjectById(@RequestParam int id) {
+        return projectService.getProjectById(id);
+    }
+
+    @DeleteMapping("/delete")
+    public void delete(@RequestParam int id){
+        projectService.deleteProject(id);
     }
 
     @GetMapping("/getAllFilter")

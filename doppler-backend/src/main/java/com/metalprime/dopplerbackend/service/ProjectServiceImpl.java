@@ -30,6 +30,11 @@ public class ProjectServiceImpl implements ProjectService {
         if (optionalProject.isPresent()) {
             Project existingProject = optionalProject.get();
 
+            existingProject.setBean_id(updateProject.getBean_id());
+            existingProject.setDescription(updateProject.getDescription());
+            existingProject.setName(updateProject.getName());
+            existingProject.setStatus(updateProject.getStatus());
+
             return projectRepository.save(existingProject);
         } else {
             throw new EntityNotFoundException("Not found Project with ID: " + id);

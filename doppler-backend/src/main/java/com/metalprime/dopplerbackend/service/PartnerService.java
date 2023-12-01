@@ -15,4 +15,8 @@ public interface PartnerService {
     public Partner getPartnerById(int id);
     
     public List<Partner> getAllPartners();
+
+    public List<Partner> getFilterPartners(int currentPage, String query);
+
+    public Integer getPartnersPages(String query);
 }

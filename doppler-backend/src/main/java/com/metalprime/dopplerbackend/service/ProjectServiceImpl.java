@@ -34,6 +34,7 @@ public class ProjectServiceImpl implements ProjectService {
             existingProject.setDescription(updateProject.getDescription());
             existingProject.setName(updateProject.getName());
             existingProject.setStatus(updateProject.getStatus());
+            existingProject.setPartners_id(updateProject.getPartners_id());
 
             return projectRepository.save(existingProject);
         } else {
